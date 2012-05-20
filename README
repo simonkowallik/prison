@@ -1,0 +1,17 @@
+Author: Simon Kowallik <sk simonkowallik.com>
+
+License: GPLv2
+
+Version: 1.0
+
+Description: This script 'prison' helps to create a chroot environment.
+             It is primarly intended to build chroot environments
+             for SSH/SCP/SFTP "jails" with OpenSSH on Linux.
+             I use it with OpenSSH 4.9+ together with ChrootDirectory.
+             It can be used together with rssh or scponly to further
+             tighten the chroot environment.
+             It is nothing new, but fullfills the job in the way I wanted.
+
+Download: https://github.com/simonkowallik
+          http://simonkowallik.com
+
