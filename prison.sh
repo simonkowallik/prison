@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Author: Simon Kowallik <sk simonkowallik.com>
 #
@@ -12,6 +12,8 @@
 #	       tighten the chroot environment.
 #	       It is nothing new, but fullfills the job in the way I wanted.
 #
+VERSION="1.1"
+#
 # Download: https://github.com/simonkowallik
 #           http://simonkowallik.com
 #
@@ -22,10 +24,10 @@
 # This is a list of binaries which will be available in the chroot environment.
 # You do not need to specify the full path, but you should if the binary is not
 # in the PATH. 
-#PROGRAMS="sh groups cp ls mkdir mv rm rmdir id scp"
+PROGRAMS="sh groups cp ls mkdir mv rm rmdir id scp"
 #PROGRAMS="sh bash groups cp ls mkdir mv rm rmdir id scp"
 #PROGRAMS="rssh sh bash groups cp ls mkdir mv rm rmdir id scp"
-PROGRAMS="scponly sh bash groups cp ls mkdir mv rm rmdir id scp"
+#PROGRAMS="scponly sh bash groups cp ls mkdir mv rm rmdir id scp"
 #
 #
 #
@@ -49,7 +51,7 @@ if [ -z "$PATH" ] ; then
 fi
 
 # check if which binary exists
-which --version > /dev/null 2>&1
+which which > /dev/null 2>&1
 if [ $? -ne 0 ]; then
   echo "ERROR: 'which' binary is required but not installed or not in PATH."
   exit 1
@@ -71,6 +73,7 @@ fi
 # print usage
 function print_usage() {
 echo "Usage: $0 ACTION PARAMETER
+Version: $VERSION
 
 Actions:
     -c, --create PRISON 	    	   create a new prison.
